@@ -1,6 +1,120 @@
 .footer {
-  background-color: #f1f1f1;
-  text-align: center;
-  padding: 1rem;
-  border-top: 1px solid #ddd;
+  background-color: rgba(10, 2, 26, 0.7); /* Slightly more opaque dark */
+  padding: var(--spacing-xl) 0 var(--spacing-lg); /* More top padding */
+  margin-top: var(--spacing-xxl);
+  border-top: 1px solid var(--card-border);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  flex-wrap: wrap; /* Allow columns to wrap */
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+}
+
+.footerColumn {
+  flex: 1; /* Allow columns to grow */
+  min-width: 200px; /* Minimum width before wrapping */
+  padding: 0 var(--spacing-sm); /* Padding within columns */
+}
+
+.footerColumn h4 {
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Column 1: Logo & Copyright */
+.footerLogo {
+  display: inline-block; /* Treat logo like text or image */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.copyright {
+  font-size: var(--font-size-small);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Column 2: Navigation */
+.footerNav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footerNav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footerNav a:hover {
+  color: var(--accent-neon);
+  text-shadow: 0 0 5px var(--accent-neon);
+}
+
+/* Column 3: Contact & Social */
+.footerEmail {
+  margin-bottom: var(--spacing-md);
+}
+
+.footerEmail a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerEmail a:hover {
+  color: var(--accent-neon);
+}
+
+.socialIcons {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.socialIcons a {
+  color: var(--text-secondary);
+  font-size: 1.2rem; /* Adjust size if using icons */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.socialIcons a:hover {
+  color: var(--accent-neon);
+  transform: scale(1.1);
+}
+
+/* Responsive: Stack columns */
+@media (max-width: 768px) {
+  .footerColumn {
+    flex-basis: 45%; /* Two columns on medium screens */
+    min-width: initial;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    flex-direction: column; /* Stack fully on small screens */
+    align-items: center; /* Center-align stacked columns */
+    text-align: center;
+  }
+  .footerColumn {
+    flex-basis: 100%;
+    padding: 0;
+  }
+  .footerNav {
+    align-items: center;
+  }
+  .socialIcons {
+    justify-content: center;
+  }
 } 

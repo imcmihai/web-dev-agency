@@ -1,14 +1,96 @@
 .header {
-  background-color: #333;
-  padding: 1rem;
+  background-color: transparent; /* Header background is part of body */
+  padding: var(--spacing-md) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  /* Add a subtle background blur on scroll if desired */
+  /* backdrop-filter: blur(5px); */ 
 }
 
-.header nav a {
-  color: white;
-  margin-right: 1rem;
-  text-decoration: none;
+/* Add background on scroll later via JS if needed */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header nav a:hover {
-  text-decoration: underline;
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  /* Add styling for your logo text or image */
+}
+
+.navDesktop {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.navDesktop a {
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+  padding: var(--spacing-xs) 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navDesktop a:hover {
+  color: var(--text-primary);
+}
+
+/* Underline effect on hover */
+.navDesktop a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-gradient);
+  transition: width 0.3s ease;
+}
+
+.navDesktop a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Menu Toggle */
+.menuToggle {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  z-index: 101; /* Above header background */
+}
+
+.menuToggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-primary);
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Basic animation for hamburger to X - requires JS state */
+/* .menuToggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); } */
+/* .menuToggle.active span:nth-child(2) { opacity: 0; } */
+/* .menuToggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); } */
+
+/* Responsive: Show toggle and hide desktop nav */
+@media (max-width: 768px) {
+  .navDesktop {
+    display: none;
+  }
+  .menuToggle {
+    display: block;
+  }
 } 

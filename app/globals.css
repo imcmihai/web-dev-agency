@@ -1,19 +1,20 @@
 :root {
-  --max-width: 1100px;
+  --max-width: 1200px;
   --border-radius: 12px;
+  --border-radius-pill: 999px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   /* Custom Design System Variables */
-  --primary-color: #0070f3; /* Example Blue */
-  --secondary-color: #00b894; /* Example Green */
+  --primary-color: var(--primary-glow-color);
+  --secondary-color: var(--secondary-glow-color);
   --accent-color: #f9ca24; /* Example Yellow */
 
-  --text-color: #333;
-  --background-color: #fff;
-  --light-gray: #f1f1f1;
-  --dark-gray: #555;
+  --text-color: var(--text-primary);
+  --background-color: var(--background-dark);
+  --light-gray: rgba(255, 255, 255, 0.1);
+  --dark-gray: var(--text-secondary);
 
   --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   --font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
@@ -22,15 +23,16 @@
   --font-size-base: 1rem;    /* 16px */
   --font-size-medium: 1.125rem; /* 18px */
   --font-size-large: 1.5rem;   /* 24px */
-  --font-size-xlarge: 2rem;  /* 32px */
+  --font-size-xlarge: 2.5rem;  /* 40px */
 
   --spacing-xs: 0.25rem; /* 4px */
   --spacing-sm: 0.5rem;  /* 8px */
   --spacing-md: 1rem;    /* 16px */
   --spacing-lg: 1.5rem;  /* 24px */
   --spacing-xl: 2rem;    /* 32px */
+  --spacing-xxl: 3rem;    /* 48px */
 
-  --border-standard: 1px solid var(--light-gray);
+  --border-standard: 1px solid var(--card-border);
   /* End Custom Design System Variables */
 
   --foreground-rgb: 0, 0, 0;
@@ -66,49 +68,25 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  /* Reference-Inspired Dark Theme Variables */
+  --background-dark: #0a021a; /* Deep dark purple/blue */
+  --background-gradient-start: #1a0a3a;
+  --background-gradient-end: #0a021a;
+  
+  --primary-glow-color: #8a2be2; /* Bright purple for glows/accents */
+  --secondary-glow-color: #4d4dff; /* Bright blue for glows/accents */
+  --accent-neon: #00f0ff; /* Neon cyan accent */
 
-    /* Custom Dark Mode Variables */
-    --primary-color: #58a6ff; /* Lighter Blue for dark mode */
-    --secondary-color: #30d158; /* Lighter Green */
+  --text-primary: #ffffff;
+  --text-secondary: #c0c0c0; /* Lighter gray for secondary text */
+  --text-muted: #808080; /* Muted gray */
 
-    --text-color: #f0f0f0;
-    --background-color: #1a1a1a;
-    --light-gray: #333;
-    --dark-gray: #ccc;
-    /* End Custom Dark Mode Variables */
+  --primary-gradient: linear-gradient(90deg, var(--secondary-glow-color) 0%, var(--primary-glow-color) 100%);
 
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
+  --card-background: rgba(26, 10, 58, 0.5); /* Semi-transparent dark purple */
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-backdrop-blur: 10px;
 }
 
 html,
@@ -118,15 +96,11 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    ) rgb(var(--background-start-rgb));
-  /* Apply custom text and background colors */
-  color: var(--text-color);
-  background: var(--background-color);
+  color: var(--text-primary);
+  background-color: var(--background-dark);
+  /* Optional: Add subtle gradient or texture background */
+  background-image: radial-gradient(circle at top right, rgba(77, 77, 255, 0.2), transparent 40%), 
+                   radial-gradient(circle at bottom left, rgba(138, 43, 226, 0.2), transparent 50%);
   font-family: var(--font-family-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -141,10 +115,4 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

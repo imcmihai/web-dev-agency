@@ -1,9 +1,10 @@
 'use client';
 
-import styles from "@/app/page.module.css"; // Adjusted path
+import styles from "@/app/page.module.css";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import ServiceCard from "@/components/ServiceCard";
+import Image from 'next/image';
 
 // Updated Sample service data with more descriptive content
 const sampleServices = [
@@ -40,21 +41,68 @@ const sampleTestimonials = [
   }
 ];
 
+const clientLogos = [ // Placeholder client logos
+  { name: "Framework", logoUrl: "/logos/framework-logo.svg" }, // Replace with actual paths
+  { name: "Ribbit Capital", logoUrl: "/logos/ribbit-logo.svg" },
+  { name: "Nascent", logoUrl: "/logos/nascent-logo.svg" },
+  { name: "ParaFi Capital", logoUrl: "/logos/parafi-logo.svg" },
+];
+
 export default function HomePageClient() {
   return (
     <div className={styles.pageContainer}> 
-      <motion.section 
-        className={styles.heroSection}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h1>Transform Your Vision into a Stunning Digital Reality</h1>
-        <p>We craft high-performance, visually captivating websites using the latest technologies like Next.js, React, and Framer Motion. Let's build your success story online.</p>
-        <Link href="/services" className={styles.ctaButton}>
-          Discover Our Expertise
-        </Link>
-      </motion.section>
+      <section className={styles.heroSection}>
+        <motion.div 
+          className={styles.heroTextContainer}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <h3 className={styles.heroSubtitle}>YOUR NAME / COMPANY</h3>
+          <h1>Creative Developer / Agency<br />Based in [Your Location]</h1>
+          <p className={styles.heroDescription}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed nulla dui tellus.</p>
+          <div className={styles.heroButtons}>
+            <Link href="/contact" className={styles.ctaButtonGradient}>
+              HIRE ME
+            </Link>
+          </div>
+          <div className={styles.heroStats}>
+            <div>
+              <h4>Successful Projects</h4>
+              <p>50,000+</p>
+            </div>
+            <div>
+              <h4>Trusted Clients</h4>
+              <p>500+</p>
+            </div>
+          </div>
+        </motion.div>
+        <motion.div 
+          className={styles.heroGraphicContainer}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <div className={styles.graphicPlaceholder}>
+            3D Graphic Placeholder
+          </div>
+        </motion.div>
+      </section>
+
+      <section className={styles.clientLogosSection}>
+        {clientLogos.map((client, index) => (
+          <motion.div 
+            key={index} 
+            className={styles.clientLogoItem}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true }}
+          >
+            <div className={styles.logoPlaceholder}>{client.name}</div>
+          </motion.div>
+        ))}
+      </section>
 
       <section className={styles.servicesOverview}>
         <h2>Core Expertise: Building Tomorrow's Web, Today</h2>
@@ -62,6 +110,7 @@ export default function HomePageClient() {
           {sampleServices.map((service, index) => (
             <motion.div
               key={index}
+              className={styles.serviceCardMotionWrapper}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               whileHover={{ scale: 1.05 }}

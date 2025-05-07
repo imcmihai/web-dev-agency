@@ -5,32 +5,33 @@
   align-items: center;
   padding: var(--spacing-lg) var(--spacing-md);
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: var(--spacing-xl) auto;
 }
 
 /* Prices Page: Header */
 .pageHeader {
   text-align: center;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-xxl);
 }
 
 .pageHeader h1 {
-  font-size: var(--font-size-xlarge);
-  color: var(--primary-color);
+  font-size: 2.8rem;
+  color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
 }
 
 .pageHeader p {
   font-size: var(--font-size-medium);
-  color: var(--dark-gray);
+  color: var(--text-secondary);
   max-width: 700px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .introductoryText {
-  font-size: var(--font-size-base); /* Slightly smaller if .pageHeader p is medium */
-  color: var(--dark-gray);
-  max-width: 800px; /* Wider for more text */
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  max-width: 800px; 
   line-height: 1.7;
   margin-top: var(--spacing-sm);
 }
@@ -38,23 +39,25 @@
 /* Philosophy Section */
 .philosophySection {
   width: 100%;
-  max-width: 800px; /* Consistent width for text blocks */
+  max-width: 800px; 
   margin: var(--spacing-xl) auto;
   padding: var(--spacing-lg);
-  background-color: var(--light-gray);
+  background-color: var(--card-background);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(var(--card-backdrop-blur));
   border-radius: var(--border-radius);
   text-align: center;
 }
 
 .philosophySection h2 {
   font-size: var(--font-size-large);
-  color: var(--secondary-color);
+  color: var(--secondary-glow-color); /* Use blue glow */
   margin-bottom: var(--spacing-md);
 }
 
 .philosophySection p {
   font-size: var(--font-size-base);
-  color: var(--text-color);
+  color: var(--text-secondary);
   line-height: 1.7;
 }
 
@@ -69,67 +72,67 @@
 
 /* Prices Page: Individual Pricing Package */
 .pricingPackage {
-  background-color: white;
+  background-color: var(--card-background);
   border-radius: var(--border-radius);
   padding: var(--spacing-lg);
-  border: 1px solid var(--border-standard);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  backdrop-filter: blur(var(--card-backdrop-blur));
   display: flex;
   flex-direction: column;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative; /* For featured badge */
-  overflow: hidden; /* For featured badge ribbon */
+  position: relative; 
+  overflow: hidden; 
 }
 
 .pricingPackage:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(var(--primary-glow-color-rgb, 138, 43, 226), 0.2); 
 }
 
 .featuredPackage {
-  border-color: var(--primary-color);
+  border-color: var(--primary-glow-color);
   border-width: 2px;
-  box-shadow: 0 8px 20px rgba(var(--primary-color-rgb, 0, 112, 243), 0.2);
+  box-shadow: 0 8px 25px rgba(var(--primary-glow-color-rgb, 138, 43, 226), 0.3);
 }
 
 .featuredBadge {
   position: absolute;
-  top: -1px; /* Adjust to align with border */
+  top: -1px; 
   right: -1px;
-  background-color: var(--primary-color);
+  background: var(--primary-gradient); /* Use gradient */
   color: white;
   padding: var(--spacing-xs) var(--spacing-md);
   font-size: var(--font-size-small);
   font-weight: bold;
   border-bottom-left-radius: var(--border-radius);
-  /* Simple ribbon effect - can be enhanced */
 }
 
 .pricingPackage h2 {
   font-size: 1.6rem;
-  color: var(--secondary-color);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
 }
 
 .packagePrice {
-  font-size: 2rem; /* Prominent price */
-  color: var(--primary-color);
+  font-size: 2.2rem; /* Make price stand out more */
+  color: var(--accent-neon); /* Neon price */
   font-weight: bold;
   margin-bottom: var(--spacing-xs);
 }
 
 .priceFrequency {
   font-size: var(--font-size-small);
-  color: var(--dark-gray);
+  color: var(--text-secondary);
   font-weight: normal;
 }
 
 .packageDescription {
   font-size: var(--font-size-base);
-  color: var(--dark-gray);
+  color: var(--text-secondary);
   margin-bottom: var(--spacing-md);
-  min-height: 60px; /* Ensure consistent height */
+  min-height: 60px; 
 }
 
 .featuresList {
@@ -137,53 +140,64 @@
   padding: 0;
   margin: var(--spacing-md) 0;
   text-align: left;
-  flex-grow: 1; /* Pushes CTA button to bottom */
+  flex-grow: 1; 
 }
 
 .featuresList li {
   margin-bottom: var(--spacing-sm);
   padding-left: var(--spacing-md);
   position: relative;
-  color: var(--text-color);
+  color: var(--text-secondary);
 }
 
-/* Custom bullet point (e.g., checkmark) */
 .featuresList li::before {
-  content: '✔'; /* Or use an SVG icon */
-  color: var(--secondary-color);
+  content: '✔'; 
+  color: var(--accent-neon);
   position: absolute;
   left: 0;
   font-weight: bold;
 }
 
+/* Unified Button Styles */
 .ctaButton, .ctaButtonSecondary {
   display: inline-block;
   width: 100%;
   padding: var(--spacing-sm) var(--spacing-lg);
   font-size: var(--font-size-base);
   font-weight: bold;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-pill);
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
   cursor: pointer;
-  margin-top: auto; /* Pushes button to bottom if .featuresList doesn't take all space */
+  margin-top: auto; 
+  border: none; /* Remove default border */
 }
 
+/* Primary CTA Button (Gradient) */
 .ctaButton {
-  background-color: var(--primary-color);
   color: white;
-  border: 2px solid var(--primary-color);
+  background: var(--primary-gradient);
+  box-shadow: 0 4px 15px rgba(var(--primary-glow-color-rgb, 138, 43, 226), 0.4);
 }
 
 .ctaButton:hover {
-  background-color: var(--secondary-color);
-  border-color: var(--secondary-color);
-  transform: scale(1.02);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(var(--primary-glow-color-rgb, 138, 43, 226), 0.6);
 }
 
-.featuredPackage .ctaButton {
-  background-color: var(--primary-color);
-  /* Or make it stand out more if needed */
+/* Secondary CTA Button (Outline/Subtle) */
+.ctaButtonSecondary {
+  background: transparent;
+  color: var(--accent-neon);
+  border: 1px solid var(--accent-neon);
+  box-shadow: 0 0 10px rgba(var(--accent-neon-rgb, 0, 240, 255), 0.2);
+}
+
+.ctaButtonSecondary:hover {
+  background: rgba(var(--accent-neon-rgb, 0, 240, 255), 0.1);
+  border-color: var(--accent-neon);
+  box-shadow: 0 0 15px rgba(var(--accent-neon-rgb, 0, 240, 255), 0.4);
+  transform: scale(1.03);
 }
 
 /* Custom Quote Section */
@@ -191,49 +205,39 @@
   width: 100%;
   text-align: center;
   padding: var(--spacing-lg);
-  background-color: var(--light-gray);
+  background-color: var(--card-background);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(var(--card-backdrop-blur));
   border-radius: var(--border-radius);
   margin-top: var(--spacing-xl);
 }
 
 .customQuoteSection h2 {
   font-size: var(--font-size-large);
-  color: var(--primary-color);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
 }
 
 .customQuoteSection p {
   font-size: var(--font-size-base);
-  color: var(--dark-gray);
+  color: var(--text-secondary);
   margin-bottom: var(--spacing-md);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.ctaButtonSecondary {
-  background-color: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-}
-
-.ctaButtonSecondary:hover {
-  background-color: var(--primary-color);
-  color: white;
-  transform: scale(1.02);
-}
-
 /* FAQ Section */
 .faqSection {
   width: 100%;
-  max-width: 800px; /* Consistent width */
-  margin: var(--spacing-xl) auto;
+  max-width: 800px; 
+  margin: var(--spacing-xxl) auto; /* More margin */
   text-align: center;
 }
 
 .faqSection h2 {
   font-size: var(--font-size-large);
-  color: var(--primary-color);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-lg);
 }
 
@@ -245,70 +249,24 @@
 }
 
 .faqItem {
-  background-color: white;
+  background-color: var(--card-background);
   padding: var(--spacing-md);
   border-radius: var(--border-radius);
-  border: 1px solid var(--border-standard);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(var(--card-backdrop-blur));
 }
 
 .faqItem h3 {
   font-size: var(--font-size-medium);
-  color: var(--secondary-color);
+  color: var(--accent-neon);
   margin-bottom: var(--spacing-xs);
 }
 
 .faqItem p {
   font-size: var(--font-size-base);
-  color: var(--text-color);
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
-/* Dark Mode Adjustments */
-@media (prefers-color-scheme: dark) {
-  .pageHeader p {
-    color: var(--light-gray);
-  }
-  .pricingPackage {
-    background-color: var(--dark-gray);
-    border-color: #444;
-  }
-  .featuredPackage {
-    border-color: var(--primary-color); /* Ensure it's visible in dark mode */
-  }
-  .priceFrequency, .packageDescription {
-    color: var(--light-gray);
-  }
-  .featuresList li {
-    color: var(--light-gray);
-  }
-  .customQuoteSection {
-    background-color: var(--dark-gray);
-  }
-  .customQuoteSection p {
-    color: var(--light-gray);
-  }
-  .ctaButtonSecondary {
-    color: var(--primary-color); /* Ensure contrast */
-    border-color: var(--primary-color);
-  }
-  .ctaButtonSecondary:hover {
-    background-color: var(--primary-color);
-    color: var(--background-color);
-  }
-  .introductoryText {
-    color: var(--light-gray);
-  }
-  .philosophySection {
-    background-color: var(--dark-gray);
-  }
-  .philosophySection p {
-    color: var(--light-gray);
-  }
-  .faqItem {
-    background-color: var(--dark-gray);
-    border-color: #444;
-  }
-  .faqItem p {
-    color: var(--light-gray);
-  }
-} 
+/* Remove old Dark Mode Adjustments */
+/* @media (prefers-color-scheme: dark) { ... } */ 
