@@ -103,7 +103,7 @@ export default function ContactPageClient() {
       >
         <h1>Get in Touch</h1>
         <p className={styles.pageSubtitle}>
-          We&apos;'re excited to hear about your project! Whether you have a clear vision or just a spark of an idea, 
+          We&apos;re excited to hear about your project! Whether you have a clear vision or just a spark of an idea, 
           our team is ready to discuss how we can bring it to life. Fill out the form below, or use one of our alternative contact methods. 
           We aim to respond to all inquiries within 24 business hours.
         </p>
@@ -120,7 +120,7 @@ export default function ContactPageClient() {
           <p className={styles.formIntro}>Please provide as much detail as possible so we can better understand your needs.</p>
           {submitStatus === 'success' && (
             <motion.p className={styles.successMessage} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-              Thank you for your message! We&apos;'ll get back to you soon.
+              Thank you for your message! We&apos;ll get back to you soon.
             </motion.p>
           )}
           {submitStatus === 'error' && (
@@ -201,7 +201,7 @@ export default function ContactPageClient() {
           <h2>Other Ways to Reach Us</h2>
           <p className={styles.contactDetailsIntro}>
             We value clear communication and are always happy to discuss your needs. 
-            Whether you prefer email for detailed inquiries, a phone call for urgent matters, or have a quick question, don&apos;'t hesitate to connect. 
+            Whether you prefer email for detailed inquiries, a phone call for urgent matters, or have a quick question, don&apos;t hesitate to connect. 
             Our team is dedicated to providing timely and helpful responses.
           </p>
           <ul>

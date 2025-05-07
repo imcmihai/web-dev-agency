@@ -105,7 +105,7 @@ export default function HomePageClient() {
       </section>
 
       <section className={styles.servicesOverview}>
-        <h2>Core Expertise: Building Tomorrow&apos;'s Web, Today</h2>
+        <h2>Core Expertise: Building Tomorrow&apos;s Web, Today</h2>
         <div className={styles.serviceCardsContainer}>
           {sampleServices.map((service, index) => (
             <motion.div
