@@ -35,7 +35,7 @@ const sampleTestimonials = [
     company: "Synergy Solutions"
   },
   {
-    quote: "Our e-commerce sales have seen a significant uplift since the new site went live. The user experience is fantastic, and it's so easy to manage.",
+    quote: "Our e-commerce sales have seen a significant uplift since the new site went live. The user experience is fantastic, and it is so easy to manage.",
     author: "Emily K.",
     company: "The Boutique Hub"
   }
@@ -105,7 +105,7 @@ export default function HomePageClient() {
       </section>
 
       <section className={styles.servicesOverview}>
-        <h2>Core Expertise: Building Tomorrow's Web, Today</h2>
+        <h2>Core Expertise: Building Tomorrow&apos;'s Web, Today</h2>
         <div className={styles.serviceCardsContainer}>
           {sampleServices.map((service, index) => (
             <motion.div
@@ -135,7 +135,7 @@ export default function HomePageClient() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <p className={styles.testimonialQuote}>\"{testimonial.quote}\"</p>
+              <p className={styles.testimonialQuote}>{testimonial.quote}</p>
               <p className={styles.testimonialAuthor}>- {testimonial.author}, {testimonial.company}</p>
             </motion.div>
           ))}
