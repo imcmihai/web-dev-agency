@@ -14,9 +14,7 @@
   padding: 0 var(--spacing-md);
 }
 
-.heroTextContainer {
-  /* Text takes the first column */
-}
+
 
 .heroSubtitle {
   font-size: var(--font-size-small);
@@ -132,9 +130,7 @@
   padding-bottom: var(--spacing-lg);
 }
 
-.clientLogoItem {
-  /* Individual logo item styling */
-}
+
 
 .logoPlaceholder {
   color: var(--text-muted);
@@ -194,9 +190,7 @@
 }
 
 /* Styles for motion wrapper if used */
-.serviceCardMotionWrapper {
-  /* Ensures motion div doesn't break layout */
-}
+
 
 /* Update Testimonial Item style */
 .testimonialItem {

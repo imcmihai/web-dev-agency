@@ -228,9 +228,7 @@
   font-weight: bold;
   margin-top: var(--spacing-md);
 }
-.socialLinkItem a {
-  /* Add specific styling for social links if needed */
-}
+
 
 /* Responsive adjustments for contact layout */
 @media (max-width: 768px) {
