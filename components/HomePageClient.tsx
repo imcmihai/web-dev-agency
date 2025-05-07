@@ -4,7 +4,7 @@ import styles from "@/app/page.module.css";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import ServiceCard from "@/components/ServiceCard";
-import Image from 'next/image';
+
 
 // Updated Sample service data with more descriptive content
 const sampleServices = [

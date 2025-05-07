@@ -2,7 +2,7 @@
 
 import styles from '@/app/services/services.module.css'; // We'll create this CSS module
 import { motion } from 'framer-motion';
-import Image from 'next/image'; // For service icons/images (optional)
+// import Image from 'next/image'; // For service icons/images (optional)
 import Link from 'next/link'; // Import Link for CTA
 
 // Define a type for our service items for better structure
@@ -100,7 +100,7 @@ export default function ServicesPageClient() {
           >
             {service.icon && (
               <div className={styles.serviceIconContainer}>
-                <Image src={service.icon} alt={`${service.title} icon`} width={50} height={50} />
+                {/* <Image src={service.icon} alt={`${service.title} icon`} width={50} height={50} />*/}
               </div>
             )}
             <div className={styles.serviceContent}>
@@ -129,7 +129,7 @@ export default function ServicesPageClient() {
         viewport={{ once: true }}
       >
         <h2>Have a Project in Mind?</h2>
-        <p>Let's turn your ideas into reality. Reach out to us for a detailed discussion and a no-obligation quote.</p>
+        <p>Let&apos;s turn your ideas into reality. Reach out to us for a detailed discussion and a no-obligation quote.</p>
         <Link href="/contact" className={styles.ctaButton}> 
           Get in Touch
         </Link>

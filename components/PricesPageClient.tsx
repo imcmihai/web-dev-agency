@@ -107,8 +107,8 @@ export default function PricesPageClient() {
       >
         <h1>Transparent Pricing for Your Success</h1>
         <p className={styles.introductoryText}>
-          Investing in a professional website is investing in your business's future. We offer clear, competitive pricing to provide you with the best value. 
-          Below, you'll find our standard packages designed to meet a variety of needs. If you don't see a perfect fit, don't worry! We're always happy to discuss your project and create a custom quote.
+          Investing in a professional website is investing in your business&apos;s future. We offer clear, competitive pricing to provide you with the best value. 
+          Below, you&apos;ll find our standard packages designed to meet a variety of needs. If you don&apos;t see a perfect fit, don&apos;t worry! We&apos;re always happy to discuss your project and create a custom quote.
         </p>
       </motion.header>
 
@@ -149,7 +149,7 @@ export default function PricesPageClient() {
 
       <section className={styles.customQuoteSection}>
         <h2>Need Something Different?</h2>
-        <p>Every project is unique. If our packages don't quite fit, we're happy to discuss your specific requirements and provide a custom quote tailored to your goals.</p>
+        <p>Every project is unique. If our packages don&apos;t quite fit, we&apos;re happy to discuss your specific requirements and provide a custom quote tailored to your goals.</p>
         <Link href="/contact?source=pricing-custom" className={styles.ctaButtonSecondary}>
           Get a Custom Quote
         </Link>
