@@ -1,0 +1,33 @@
+.priceTable {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.priceItem {
+  border: 1px solid #0070f3;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  flex-basis: 30%;
+}
+
+.priceItem h4 {
+  color: #0070f3;
+  margin-top: 0;
+}
+
+.priceItem .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.priceItem ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.priceItem ul li {
+  margin-bottom: 0.5rem;
+} 

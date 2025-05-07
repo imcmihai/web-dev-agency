@@ -1,0 +1,193 @@
+/* Services Page: General Container */
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-width: var(--max-width);
+  margin: 0 auto; /* Center the content */
+}
+
+/* Services Page: Header */
+.pageHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.pageHeader h1 {
+  font-size: var(--font-size-xlarge);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.pageHeader p {
+  font-size: var(--font-size-medium);
+  color: var(--dark-gray);
+  max-width: 700px; /* Limit width for readability */
+  margin: 0 auto;
+}
+
+/* Services Page: List of Services */
+.servicesList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Services Page: Individual Service Item */
+.serviceItem {
+  background-color: white; /* Or var(--light-gray) if preferred */
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid var(--border-standard);
+  display: flex; /* For icon and content alignment */
+  gap: var(--spacing-lg);
+  overflow: hidden; /* To contain animations if they might overflow */
+}
+
+.serviceIconContainer {
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  display: flex;
+  align-items: flex-start; /* Align icon to the top of its container */
+  margin-top: 0.25rem; /* Slight alignment adjustment */
+}
+
+.serviceContent {
+  flex-grow: 1;
+}
+
+.serviceContent h2 {
+  font-size: 1.75rem; /* Slightly larger than h2 on home cards */
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.serviceDescription {
+  font-size: var(--font-size-base);
+  color: var(--dark-gray);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+}
+
+.serviceContent h3 {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.serviceContent ul {
+  list-style-type: disc; /* Or '✔ ' with pseudo-elements for custom bullets */
+  margin-left: var(--spacing-md);
+  padding-left: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.serviceContent ul li {
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.serviceKeywords {
+  font-size: var(--font-size-small);
+  color: var(--dark-gray);
+  margin-top: var(--spacing-md);
+  border-top: 1px dashed var(--light-gray);
+  padding-top: var(--spacing-sm);
+}
+
+.serviceKeywords strong {
+  color: var(--secondary-color);
+}
+
+/* CTA Section Styles for Services Page */
+.ctaSection {
+  width: 100%;
+  /* max-width: var(--max-width); // Already handled by pageContainer */
+  padding: var(--spacing-xl) var(--spacing-md);
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--border-radius);
+  margin-top: var(--spacing-xl);
+  /* margin-bottom: var(--spacing-xl); // Optional, if footer provides enough space */
+}
+
+.ctaSection h2 {
+  font-size: var(--font-size-large);
+  margin-bottom: var(--spacing-sm);
+}
+
+.ctaSection p {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--spacing-lg);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButton { /* Generic CTA button style if not already global */
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.ctaSection .ctaButton {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.ctaSection .ctaButton:hover {
+  background-color: var(--light-gray);
+  color: var(--primary-color);
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+  .pageHeader p {
+    color: var(--light-gray);
+  }
+
+  .serviceItem {
+    background-color: var(--dark-gray);
+    border-color: #444;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .serviceDescription {
+    color: var(--light-gray);
+  }
+
+  .serviceContent ul li {
+    color: var(--light-gray);
+  }
+
+  .serviceKeywords {
+    color: var(--light-gray);
+    border-top-color: #555;
+  }
+
+  /* CTA Section Dark Mode */
+  .ctaSection {
+    /* background-color: var(--primary-color); // Potentially adjust for dark mode if needed */
+    color: var(--background-color); /* Text on primary background in dark mode */
+  }
+
+  .ctaSection .ctaButton {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+  }
+
+  .ctaSection .ctaButton:hover {
+    background-color: var(--dark-gray);
+    /* color: var(--primary-color); // Ensure contrast */
+  }
+} 

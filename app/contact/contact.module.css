@@ -1,0 +1,265 @@
+/* Contact Page: General Container */
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Contact Page: Header */
+.pageHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.pageHeader h1 {
+  font-size: var(--font-size-xlarge);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.pageHeader p {
+  font-size: var(--font-size-medium);
+  color: var(--dark-gray);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Added class for subtitle */
+.pageSubtitle {
+  font-size: var(--font-size-base); /* Use base size for more text */
+  color: var(--dark-gray);
+  max-width: 800px; /* Allow slightly wider */
+  margin: var(--spacing-sm) auto 0; /* Add some top margin */
+  line-height: 1.7;
+}
+
+/* Contact Page: Layout (Form + Details) */
+.contactLayout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Form takes more space */
+  gap: var(--spacing-xl);
+  align-items: flex-start; /* Align items to the top */
+}
+
+.formContainer h2,
+.contactDetails h2 {
+  font-size: var(--font-size-large);
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Form Styles */
+.formContainer {
+  background-color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid var(--border-standard);
+}
+
+.formIntro {
+  font-size: var(--font-size-small);
+  color: var(--dark-gray);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.formGroup {
+  margin-bottom: var(--spacing-md);
+}
+
+.formGroup label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-color);
+}
+
+/* Style for optional hint text in labels */
+.optionalText {
+  font-weight: normal;
+  font-size: 0.9em; /* Slightly smaller */
+  color: var(--dark-gray);
+  margin-left: var(--spacing-xs);
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-standard);
+  border-radius: calc(var(--border-radius) / 2); /* Slightly smaller radius for inputs */
+  font-size: var(--font-size-base);
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--primary-color); /* Handled by Framer Motion variants too */
+  box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb, 0, 112, 243), 0.2);
+}
+
+.errorText {
+  color: #d32f2f; /* Material Design error red */
+  font-size: var(--font-size-small);
+  margin-top: var(--spacing-xs);
+}
+
+.submitButton {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%; /* Full width button */
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.submitButton:disabled {
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+  cursor: not-allowed;
+}
+
+.successMessage,
+.errorMessage {
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.successMessage {
+  background-color: #e8f5e9; /* Light green */
+  color: #2e7d32; /* Dark green */
+  border: 1px solid #a5d6a7;
+}
+
+.errorMessage {
+  background-color: #ffebee; /* Light red */
+  color: #c62828; /* Dark red */
+  border: 1px solid #ef9a9a;
+}
+
+/* Contact Details Styles */
+.contactDetails {
+  background-color: var(--light-gray);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+}
+
+.contactDetailsIntro { /* Specific style for the intro paragraph */
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.contactDetails p { /* Keep general p styles if needed elsewhere */
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.contactDetails ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.contactDetails ul li {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-base);
+}
+
+.contactDetails ul li strong {
+  color: var(--primary-color);
+}
+
+.contactDetails ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.contactDetails ul li a:hover {
+  text-decoration: underline;
+}
+
+.privacyNote {
+  font-size: var(--font-size-small) !important; /* Override more general p if needed */
+  color: var(--dark-gray) !important;
+  margin-top: var(--spacing-lg) !important;
+}
+
+.privacyNote a {
+  color: var(--primary-color) !important;
+}
+
+/* Add styles for optional social links if uncommented */
+.socialLinksHeader {
+  font-weight: bold;
+  margin-top: var(--spacing-md);
+}
+.socialLinkItem a {
+  /* Add specific styling for social links if needed */
+}
+
+/* Responsive adjustments for contact layout */
+@media (max-width: 768px) {
+  .contactLayout {
+    grid-template-columns: 1fr; /* Stack on smaller screens */
+  }
+  .contactDetails {
+    margin-top: var(--spacing-lg);
+  }
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+  .pageHeader p { color: var(--light-gray); }
+  .formContainer { 
+    background-color: var(--dark-gray); 
+    border-color: #444;
+  }
+  .formGroup label { color: var(--light-gray); }
+  .formGroup input, .formGroup textarea {
+    background-color: #2b2b2b; /* Darker input background */
+    color: var(--light-gray);
+    border-color: #555;
+  }
+  .formGroup input:focus, .formGroup textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb, 88, 166, 255), 0.3); /* Lighter glow for dark */
+  }
+  .submitButton:disabled {
+    background-color: #444;
+    color: #888;
+  }
+  .successMessage { background-color: #1c301d; color: #a5d6a7; border-color: #385e3a; }
+  .errorMessage { background-color: #321c1e; color: #ef9a9a; border-color: #5c1a1e; }
+  .contactDetails { background-color: var(--dark-gray); }
+  .contactDetails p { color: var(--light-gray); }
+  .contactDetails ul li { color: var(--light-gray); }
+  .contactDetails ul li strong { /* color: var(--primary-color); Already set, might need lighter shade if primary is too dark */ }
+  .contactDetails ul li a { color: var(--secondary-color); /* Check contrast */ }
+  .privacyNote { color: var(--light-gray) !important; }
+  .privacyNote a { color: var(--primary-color) !important; /* Check contrast */ }
+  .formIntro { color: var(--light-gray); }
+  .optionalText { color: var(--light-gray); }
+  .contactDetailsIntro { color: var(--light-gray); }
+} 
