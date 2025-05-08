@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 // Replace with your actual domain when deploying
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; 
+const baseUrl = 'https://web-dev-agency-seven.vercel.app/'; 
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Add other static routes here

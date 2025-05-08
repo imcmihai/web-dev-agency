@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: "Transparent Web Development Pricing Packages",
     description: "Find the perfect pricing plan for your Next.js, React, or custom web development project.",
-    // url: 'https://yourwebsite.com/prices', // Replace with your actual URL
+    url: 'https://web-dev-agency-seven.vercel.app/prices', // Replace with your actual URL
     // images: [ /* Add relevant images for social sharing */ ],
   },
   // twitter: { /* Add Twitter card metadata */ },

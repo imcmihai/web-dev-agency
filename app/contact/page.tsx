@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: "Contact Us for Expert Web Development Services",
     description: "Reach out to discuss your project requirements and get a personalized quote.",
-    // url: 'https://yourwebsite.com/contact', // Replace with your actual URL
+    url: 'https://web-dev-agency-seven.vercel.app/contact', // Replace with your actual URL
     // images: [ /* Add relevant images for social sharing */ ],
   },
   // twitter: { /* Add Twitter card metadata */ },

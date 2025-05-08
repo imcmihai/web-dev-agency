@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: "Our Web Development Services | Next.js, React, Framer Motion Experts",
     description: "Discover our range of expert web development services designed to elevate your brand.",
-    // url: 'https://yourwebsite.com/services', // Replace with your actual URL
+    url: 'https://web-dev-agency-seven.vercel.app/services', // Replace with your actual URL
     // images: [ /* Add relevant images for social sharing */ ],
   },
   // twitter: { /* Add Twitter card metadata */ },

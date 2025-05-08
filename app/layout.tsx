@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Awesome Web Development Services",
-  description: "Professional web development services specializing in Next.js, React, and Framer Motion.",
+  title: "High Converting Websites for your Business",
+  description: "Professional web development services for your business specializing in Next.js, React, and Framer Motion.",
 };
 
 // JSON-LD for Organization Schema
@@ -24,7 +24,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "My Awesome Web Development",
-  // "url": "https://yourwebsite.com", // Replace with your actual URL
+  "url": "https://web-dev-agency-seven.vercel.app/prices", // Replace with your actual URL
   // "logo": "https://yourwebsite.com/logo.png", // Replace with your logo URL
   "contactPoint": {
     "@type": "ContactPoint",

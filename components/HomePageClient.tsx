@@ -59,7 +59,7 @@ export default function HomePageClient() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h3 className={styles.heroSubtitle}>YOUR NAME / COMPANY</h3>
-          <h1>Creative Developer / Agency<br />Based in [Your Location]</h1>
+          <h1>Professioanl Websites for your Business <br /> Based in [Your Location]</h1>
           <p className={styles.heroDescription}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed nulla dui tellus.</p>
           <div className={styles.heroButtons}>
             <Link href="/contact" className={styles.ctaButtonGradient}>
